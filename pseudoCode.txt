@@ -17,15 +17,13 @@ if(guessedLetter === one of the letters in the array of letters that make up the
 
 for loop will run each time a letter is correctly guessed
 
-for(var i=0; i<animals.length; i++) {
+for(var i=0; i<animal.length; i++) {
 	if (animal[i] == guessedLetter) {
 		wordHTML = wordHTML + "guessedLetter"
 	} else {
 		wordHTML = wordHTML + " _" //space + underscore
 	}
 }
-
-the above will 
 
 document.querySelector('#game').innerHTML = wordHTML;
 
