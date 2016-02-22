@@ -6,12 +6,64 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-<script type="text/javascript">
+	<header>
+			<h1>Hangman Game</h1>
+	</header>
+	<div id="wrapper">
+		<div id="game">
+
+
+		</div>
+
+
+		<script type="text/javascript">
 	
 
+		// make a list of all letters array - maybe (see if necessary)
+		// make an array of the letters of the word and then use indexOf to check
+		var listOfWords = ["word1", "word2", "word3","word4", "word5"]
+		var guessesLeft = 10;
+		var numGuesses = 0;
+		var userGuesses = [];
+		var wordOnPage = "";
+		var word = listOfWords[math.floor(math.random() * listOfWords.length)];
+		var wordLetters = word.split('');
+
+		// for each guess, guessesLeft--
+		// variables - guessesLeft, numGuesses
+		// on wrong userGuess do:
+		if (userGuesses.length < 10) {
+			alert("Guess another letter");
+		} else {
+			alert("GAME OVER");
+		}
+
+		if (userGuess === wordLetters[i]) {
+
+		} else {
+			guessesLeft--
+			userGuesses.push(userGuess);
 
 
-</script>
+		}
+		// use switch statement for key presses - maybe for all 26 chars?
 
+		// make a userGuesses array to store guessed letters per round. Only reduce on wrong guess. clear on new game? print out?
+
+		var giraffe = "<p>Press any key to start playing </p>" + "<p>wins:" + (wins stat) + etc for more stat lines
+		document.querySelector('#game').innerHTML = giraffe
+		// #game === html id tag
+
+	    document.onkeyup = function(event) {
+        var letter = String.fromCharCode(event.keyCode).toLowerCase();
+        // add function
+  		}
+
+
+		</script>
+	</div>
+	<footer>
+		&copy; Copyright 2016 Robert M. Parker
+	</footer>
 </body>
 </html>

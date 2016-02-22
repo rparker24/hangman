@@ -1,0 +1,34 @@
+Hangman pseudo code
+
+var list of animals = (array of animal names)
+1. we choose a word from a predefined list
+var animal = listofanimals[math.floor(math.random() * listofanimals.length)]
+
+Use this to split a string into an array of strings of single letters - "Hello world!".split('')
+
+2. we build a view
+
+	_ _ _ _ _ _ _ _ 
+
+var wordHTML = "";
+
+
+if(guessedLetter === one of the letters in the array of letters that make up the current value of animal)
+
+for loop will run each time a letter is correctly guessed
+
+for(var i=0; i<animals.length; i++) {
+	if (animal[i] == guessedLetter) {
+		wordHTML = wordHTML + "guessedLetter"
+	} else {
+		wordHTML = wordHTML + " _" //space + underscore
+	}
+}
+
+the above will 
+
+document.querySelector('#game').innerHTML = wordHTML;
+
+the above takes a blank string and adds an underscore for each letter of the randomly selected word.
+
+3. We let the user guess a letter
