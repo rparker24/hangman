@@ -20,7 +20,7 @@
 			<p>Losses: <span id="losses">0</span></p>
 			<p>Current Word:</p>
 			<p id="currentWord"></p>
-			<p>Number of Guesses Remaining: <span id="numGuesses"></span></p>
+			<p>Number of Guesses Remaining: <span id="numGuesses">10</span></p>
 			<p>Letters Already Guessed: <span id="letterGuesses"></span></p>
 		</div>
 <!-- 	<div id="gameImageRight">
@@ -33,19 +33,17 @@
 
 	<script type="text/javascript">
 	
-		var countriesList = ["canada", "china"]; // , "Mexico", "Russia","England"];
+		var countriesList = ["canada", "china", "mexico", "russia","england"];
 		var wins = 0;
 		var losses = 0;
 		var guessesLeft = 10;
 		var userGuesses = [];
-		var wordOnPage = "";
 		var word = countriesList[Math.floor(Math.random() * countriesList.length)];
 		var wordLetters = word.split('');
-		var userGuess
 
 	    document.onkeyup = function(event) {
         	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-
+			var wordOnPage = "";
 			if (wordLetters.indexOf(userGuess) > -1) {
 				for(var i = 0; i < wordLetters.length; i++) {
 					if (wordLetters[i] == userGuess) {
@@ -54,6 +52,7 @@
 						wordOnPage += " _";
 					}
 				}
+				// var goodLetters = wordOnPage.split('');
 			} else if (userGuesses.indexOf(userGuess) > -1) {
 				//do nothing (don't subtract a guess left or push to userGuesses array)
 			} else {

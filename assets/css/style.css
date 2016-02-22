@@ -83,3 +83,7 @@ footer p {
 	font-weight: normal;
 	margin-top: 15px;
 }
+
+#currentWord {
+	padding: 5px;
+}
