@@ -11,19 +11,24 @@
 		<h3>Countries of the World Edition</h3>
 	</header>
 	<div id="wrapper">
-		<div id="gameImage"></div>
+		<div id="gameImageLeft">
+			<img src="assets/images/hm7.gif">
+		</div>
 		<div id="game">
  			<p>Guess a letter to start playing</p>
- 			<p id="wins">Wins: 0</p>
-			<p id="losses">Losses: 0</p>
-			<p id="currentWord">Current Word</p>
+ 			<p>Wins: <span id="wins">0</span></p>
+			<p>Losses: <span id="losses">0</span></p>
+			<p>Current Word:</p>
+			<p id="currentWord"></p>
 			<p>Number of Guesses Remaining: <span id="numGuesses"></span></p>
 			<p>Letters Already Guessed: <span id="letterGuesses"></span></p>
 		</div>
-
-	</div>
+<!-- 	<div id="gameImageRight">
+			<img src="assets/images/hm7.gif">
+		</div>
+ -->	</div>
 	<footer>
-		&copy; Copyright 2016 Robert M. Parker
+		<p>&copy; Copyright 2016 Robert M. Parker</p>
 	</footer>
 
 	<script type="text/javascript">
@@ -37,11 +42,12 @@
 		var word = countriesList[Math.floor(Math.random() * countriesList.length)];
 		var wordLetters = word.split('');
 		var userGuess
+
 	    document.onkeyup = function(event) {
         	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
 			if (wordLetters.indexOf(userGuess) > -1) {
-				for(var i = 0; i < word.length; i++) {
+				for(var i = 0; i < wordLetters.length; i++) {
 					if (wordLetters[i] == userGuess) {
 						wordOnPage += (" " + userGuess);
 					} else {
@@ -54,18 +60,20 @@
 				guessesLeft--;
 				userGuesses.push(userGuess);
 			}
-
-			document.querySelector('#numGuesses').innerHTML = guessesLeft;
-			document.querySelector('#letterGuesses').innerHTML = userGuesses;
-
+			// what to do if a loss occurs
 			if (userGuesses.length >= 10) {
 				losses++;
 				word = countriesList[Math.floor(Math.random() * countriesList.length)];
 				guessesLeft = 10;
 				userGuesses = [];
 			}
+
 			document.querySelector('#currentWord').innerHTML = wordOnPage;
+			document.querySelector('#numGuesses').innerHTML = guessesLeft;
+			document.querySelector('#letterGuesses').innerHTML = userGuesses;
+			document.querySelector('#losses').innerHTML = losses;			
+			document.querySelector('#wins').innerHTML = wins;
 		}
-		</script>
+	</script>
 </body>
 </html>
