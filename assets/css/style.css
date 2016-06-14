@@ -2,10 +2,6 @@ html {
 	margin: 0 auto;
 }
 
-* {
-
-}
-
 body {
 	background-image: url("assets/images/map1.jpg");
 	background-color: #fff;
@@ -57,10 +53,11 @@ p {
 	margin: 30px 0px 0px 30px;
 }
 
-/*#gameImageRight {
-	margin-top: 30px;
+#gameImageRight {
+	float: right;
+	margin: -275px 30px 0px 0px;
 }
-*/
+
 #game {
 	background-color: #fff;
 	opacity: 0.75;
@@ -78,6 +75,7 @@ footer {
 	min-height: 35px;
 	border-top: 3px solid #425e82;
 }
+
 footer p {
 	font-size: 14px;
 	font-weight: normal;

@@ -23,16 +23,16 @@
 			<p>Number of Guesses Remaining: <span id="numGuesses">10</span></p>
 			<p>Letters Already Guessed: <span id="letterGuesses"></span></p>
 		</div>
-<!-- 	<div id="gameImageRight">
+		<div id="gameImageRight">
 			<img src="assets/images/hm7.gif">
 		</div>
- -->	</div>
+	</div>
 	<footer>
 		<p>&copy; Copyright 2016 Robert M. Parker</p>
 	</footer>
 
 	<script type="text/javascript">
-	
+
 		var countriesList = ["canada", "china", "mexico", "russia","england"];
 		var wins = 0;
 		var losses = 0;
@@ -40,10 +40,10 @@
 		var userGuesses = [];
 		var word = countriesList[Math.floor(Math.random() * countriesList.length)];
 		var wordLetters = word.split('');
+		var wordOnPage = "";
 
 	    document.onkeyup = function(event) {
         	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-			var wordOnPage = "";
 			if (wordLetters.indexOf(userGuess) > -1) {
 				for(var i = 0; i < wordLetters.length; i++) {
 					if (wordLetters[i] == userGuess) {
@@ -66,11 +66,15 @@
 				guessesLeft = 10;
 				userGuesses = [];
 			}
+// add reset function? - way to play again
+// if statement for win/loss?
+// display what the word was if game is a loss, pick new word, adjust numbers (wins, losses, guessesLeft, userGuesses)
+// try using separate arrays for different difficulty setting (more, harder words as difficulty progresses)
 
 			document.querySelector('#currentWord').innerHTML = wordOnPage;
 			document.querySelector('#numGuesses').innerHTML = guessesLeft;
 			document.querySelector('#letterGuesses').innerHTML = userGuesses;
-			document.querySelector('#losses').innerHTML = losses;			
+			document.querySelector('#losses').innerHTML = losses;
 			document.querySelector('#wins').innerHTML = wins;
 		}
 	</script>
